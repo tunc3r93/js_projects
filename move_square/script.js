@@ -12,12 +12,23 @@ class Square {
         this.squareElement.addEventListener('click', () => this.move());
     }
 
+    getRandomColor () {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
     move() {
         this.currentPosition = (this.currentPosition + 1) % this.positions.length;
         const position = this.positions[this.currentPosition];
 
         this.squareElement.style.top = position.top;
         this.squareElement.style.left = position.left;
+
+        this.squareElement.style.backgroundColor = this.getRandomColor();
     }
 }
 
