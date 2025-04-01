@@ -1,0 +1,17 @@
+[
+  {
+    "EggType": "soft-boiled",
+    "StartTime": "2025-04-01T22:23:15.601Z",
+    "Duration": 240
+  },
+  {
+    "EggType": "soft-middle-boiled",
+    "StartTime": "2025-04-01T22:27:32.904Z",
+    "Duration": 300
+  },
+  {
+    "EggType": "hard-boiled",
+    "StartTime": "2025-04-01T22:28:28.198Z",
+    "Duration": 600
+  }
+]

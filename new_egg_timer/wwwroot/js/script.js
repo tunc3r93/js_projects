@@ -74,6 +74,8 @@ class EggTimer {
 
         // Start changing the egg image every second
         this.changeEggImage();
+
+        this.saveEggTimerData(this.selectedEggType, this.currentTime);
     }
 
     // Set the first egg image (the one at index 0) when the timer starts
@@ -127,6 +129,27 @@ class EggTimer {
         const remainingSeconds = seconds % 60;    // Get remaining seconds
         return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
+
+    saveEggTimerData = async (eggType, duration) => {
+        try {
+            const response = await fetch('https://localhost:7188/api/eggtimer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    eggType: eggType,
+                    startTime: new Date().toISOString(),
+                    duration: duration
+                })
+            });
+
+            const result = await response.json();
+            console.log('Server Response:', result);
+        } catch (error) {
+            console.error('Error saving data:', error);
+        }
+    };
 }
 
 const eggTimer = new EggTimer();
