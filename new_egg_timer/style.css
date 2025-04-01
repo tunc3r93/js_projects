@@ -1,13 +1,126 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
 }
-div {
-    margin: 10px 0;
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
 }
-#egg-img {
+
+/* Title sections centered */
+h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Flex container to center the section titles */
+#egg-container, #timer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Egg selection */
+.egg-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+}
+
+.egg-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em;
+    color: #555;
+    cursor: pointer;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.egg-option input {
+    cursor: pointer;
+    accent-color: #282828;
+}
+
+.egg-option span {
+    display: inline-block;
+    text-align: left;
+}
+
+/* Countdown timer */
+#countdown-timer {
+    width: 100px;
+    height: 50px;
+    font-size: 2em;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #282828;
+    color: #333;
+    text-align: center;
+    outline: none;
+}
+
+#countdown-timer:focus {
+    border-color: #3c3c3c;
+}
+
+/* Button */
+#start-btn-container {
+    margin-bottom: 30px;
+}
+
+#start-btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #282828;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+    background-color: #656565;
+}
+
+/* Egg image */
+#egg-img-container img {
     width: 100px;
     height: 100px;
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .egg-options {
+        grid-template-columns: 1fr;
+    }
+
+    #countdown-timer {
+        width: 80px;
+        height: 40px;
+        font-size: 1.5em;
+    }
 }

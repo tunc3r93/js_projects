@@ -7,29 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Egg Timer</h1>
-<div>
-    <div>
+<div id="app">
+    <h1>Egg Timer</h1>
+    <div id="egg-container">
         <h4>Choose your egg</h4>
-        <label for="soft-boiled-egg">Soft Boiled Egg
-            <input type="radio" id="soft-boiled-egg" name="soft-egg" value="soft-egg">
-        </label>
-        <label for="soft-middle-boiled-egg">Soft Middle Boiled Egg
-            <input type="radio" id="soft-middle-boiled-egg" name="soft-middle-egg" value="soft-middle-boiled-egg">
-        </label>
-        <label for="hard-boiled-egg">Hard Boiled Egg
-            <input type="radio" id="hard-boiled-egg" name="hard-boiled-egg" value="hard-boiled-egg">
-        </label>
+        <div class="egg-options">
+            <label for="soft-boiled-egg" class="egg-option">
+                <input type="radio" id="soft-boiled-egg" name="egg-type" value="soft-boiled">
+                <span>Soft Boiled Egg</span>
+            </label>
+            <label for="soft-middle-boiled-egg" class="egg-option">
+                <input type="radio" id="soft-middle-boiled-egg" name="egg-type" value="soft-middle-boiled">
+                <span>Soft Middle Boiled Egg</span>
+            </label>
+            <label for="hard-boiled-egg" class="egg-option">
+                <input type="radio" id="hard-boiled-egg" name="egg-type" value="hard-boiled">
+                <span>Hard Boiled Egg</span>
+            </label>
+        </div>
     </div>
-    <div>
-        <button id="start-btn">Start Timer</button>
-    </div>
-    <div>
+
+    <div id="timer-container">
         <label for="countdown-timer">Countdown Timer</label>
         <input id="countdown-timer" name="countdown-timer" type="text" readonly>
     </div>
-    <div style="display: none">
-        <img src="" alt="" id="egg-img">
+
+    <div id="start-btn-container">
+        <button id="start-btn">Start Timer</button>
+    </div>
+
+    <div id="egg-img-container" style="display: none;">
+        <img src="" alt="Egg Image" id="egg-img">
     </div>
 </div>
 </body>
